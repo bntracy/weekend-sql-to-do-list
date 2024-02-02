@@ -46,3 +46,12 @@ function addItem(event) {
         alert('Something went wrong!');
     });
 }
+
+function completeItem(id) {
+    axios.patch(`/todos/mark/${id}`).then(response => {
+        getItems();
+    }).catch(error => {
+        console.log('Error in PATCH', error);
+        alert('Something went wrong!');
+    });
+}
