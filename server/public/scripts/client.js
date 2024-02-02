@@ -19,10 +19,16 @@ function getItems() {
 function renderItems(items) {
     document.getElementById('item_display').innerHTML = '';
     for (let item of items) {
+        let completedClass = '';
+        let disabledButton = '';
+        if (item.isComplete) {
+            completedClass = 'class="completed"';
+            disabledButton = 'disabled';
+        }
         document.getElementById('item_display').innerHTML += `
-            <tr data-testid="toDoItem">
+            <tr data-testid="toDoItem" ${completedClass}>
                 <td>${item.text}</td>
-                <td><button data-testid="completeButton" onclick="completeItem(${item.id})">Mark Done</button></td>
+                <td><button data-testid="completeButton" onclick="completeItem(${item.id})" ${disabledButton}>Mark Done</button></td>
                 <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})">Delete</button></td>
             </tr>
         `;
