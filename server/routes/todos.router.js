@@ -34,4 +34,15 @@ router.patch('/mark/:id', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    let queryText = 'DELETE FROM "todos" WHERE "id" = $1;';
+    pool.query(queryText, [id]).then(result => {
+        res.sendStatus(204);
+    }).catch(err => {
+        console.log(`Error in DELETE, running query ${queryText}`, err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;

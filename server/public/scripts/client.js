@@ -55,3 +55,12 @@ function completeItem(id) {
         alert('Something went wrong!');
     });
 }
+
+function deleteItem(id) {
+    axios.delete(`/todos/${id}`).then(response => {
+        getItems();
+    }).catch(error => {
+        console.log('Error in DELETE', error);
+        alert('Something went wrong!');
+    });
+}
