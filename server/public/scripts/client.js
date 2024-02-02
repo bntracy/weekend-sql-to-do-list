@@ -22,7 +22,7 @@ function renderItems(items) {
         let completedClass = '';
         let disabledButton = '';
         if (item.isComplete) {
-            completedClass = 'class="completed"';
+            completedClass = 'class="completed table-light"';
             disabledButton = 'disabled';
         }
         document.getElementById('item_display').innerHTML += `
