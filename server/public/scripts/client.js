@@ -29,14 +29,14 @@ function renderItems(items) {
     }
 }
 
-// function addItem(event) {
-//     event.preventDefault();
-//     let text = document.getElementById('to-do_input').value;
-//     axios.post('/todos', { text: text }).then(response => {
-//         getItems();
-//         document.getElementById('to-do_input').value = '';
-//     }).catch(error => {
-//         console.log('Error in POST', error);
-//         alert('Something went wrong!');
-//     });
-// }
+function addItem(event) {
+    event.preventDefault();
+    let text = document.getElementById('to-do_input').value;
+    axios.post('/todos', { text: text }).then(response => {
+        getItems();
+        document.getElementById('to-do_input').value = '';
+    }).catch(error => {
+        console.log('Error in POST', error);
+        alert('Something went wrong!');
+    });
+}
