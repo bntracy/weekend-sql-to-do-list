@@ -2,3 +2,13 @@
     text-decoration: line-through;
     color: gray;
 }
+
+body {
+    background-color: aliceblue;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+}
+
+table {
+    margin: 2rem auto;
+}
