@@ -81,7 +81,7 @@ function deleteItem(id) {
 
 function prettyTimestamp(timestamp) {
     let localTimestamp = new Date(timestamp);
-    console.log(localTimestamp);
+    // console.log(localTimestamp);
     let hours = localTimestamp.getHours();
     let amOrPm = 'AM';
     if (hours > 12) {
