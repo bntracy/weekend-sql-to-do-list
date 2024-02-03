@@ -2,7 +2,7 @@
 
 ## Description
 
-A basic to-do list. Items can be added, deleted, or marked complete.
+A basic to-do list. Items can be added, deleted, or marked complete. Completed items display a timestamp marking the time of completion.
 
 ### Prerequisites
 
