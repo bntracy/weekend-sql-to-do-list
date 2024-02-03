@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 
 router.patch('/mark/:id', (req, res) => {
     let id = req.params.id;
-    let queryText = 'UPDATE "todos" SET "isComplete" = true WHERE "id" = $1;';
+    let queryText = 'UPDATE "todos" SET "isComplete" = true, "completedAt" = CURRENT_TIMESTAMP WHERE "id" = $1;';
     pool.query(queryText, [id]).then(result => {
         res.sendStatus(200);
     }).catch(err => {
