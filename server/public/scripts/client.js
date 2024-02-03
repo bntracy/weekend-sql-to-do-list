@@ -22,15 +22,18 @@ function renderItems(items) {
         let completedClass = '';
         let disabledButton = '';
         let textMuted = '';
+        let timestamp ='';
         if (item.isComplete) {
             completedClass = 'class="completed table-light"';
             disabledButton = 'disabled';
             textMuted = 'class="text-muted"';
+            timestamp = prettyTimestamp(item.completedAt);
         }
         document.getElementById('item_display').innerHTML += `
             <tr data-testid="toDoItem" ${completedClass}>
                 <td ${textMuted}>${item.text}</td>
                 <td><button data-testid="completeButton" onclick="completeItem(${item.id})" class="btn btn-success" ${disabledButton}>Mark Done</button></td>
+                <td>${timestamp}</td>
                 <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})" class="btn btn-danger">Delete</button></td>
             </tr>
         `;
@@ -65,4 +68,17 @@ function deleteItem(id) {
         console.log('Error in DELETE', error);
         alert('Something went wrong!');
     });
+}
+
+function prettyTimestamp(timestamp) {
+    let localTimestamp = new Date(timestamp);
+    console.log(localTimestamp);
+    let hours = localTimestamp.getHours();
+    let amOrPm = 'AM';
+    if (hours > 12) {
+        hours -= 12;
+        amOrPm = 'PM';
+    }
+    let prettyString = `${localTimestamp.toDateString()} ${hours}:${localTimestamp.getMinutes()} ${amOrPm}`;
+    return prettyString;
 }
