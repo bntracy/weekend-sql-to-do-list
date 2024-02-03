@@ -33,7 +33,7 @@ function renderItems(items) {
             <tr data-testid="toDoItem" ${completedClass}>
                 <td ${textMuted}>${item.text}</td>
                 <td><button data-testid="completeButton" onclick="completeItem(${item.id})" class="btn btn-success" ${disabledButton}>Mark Done</button></td>
-                <td>${timestamp}</td>
+                <td ${textMuted}>${timestamp}</td>
                 <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})" class="btn btn-danger">Delete</button></td>
             </tr>
         `;
