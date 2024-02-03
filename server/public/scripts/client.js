@@ -28,8 +28,8 @@ function renderItems(items) {
         document.getElementById('item_display').innerHTML += `
             <tr data-testid="toDoItem" ${completedClass}>
                 <td>${item.text}</td>
-                <td><button data-testid="completeButton" onclick="completeItem(${item.id})" ${disabledButton}>Mark Done</button></td>
-                <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})">Delete</button></td>
+                <td><button data-testid="completeButton" onclick="completeItem(${item.id})" class="btn btn-success" ${disabledButton}>Mark Done</button></td>
+                <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})" class="btn btn-danger">Delete</button></td>
             </tr>
         `;
     }
