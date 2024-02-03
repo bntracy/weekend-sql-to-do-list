@@ -14,19 +14,15 @@
 
 <body>
   <header>
-    <h1 class="display-3">SQL TO-DO List</h1>
+    <h1 class="display-3 my-3">SQL TO-DO List</h1>
   </header>
   <main>
     <section>
-      <form onsubmit="addItem(event)">
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <label for="to-do_input" class="visually-hidden">To-Do Item:</label>
-            <input type="text" id="to-do_input" data-testid="toDoTextInput" class="form-control" placeholder="enter to-do item" required>
-          </div>
-          <div class="col-auto">
-            <button type="submit" data-testid="submitButton">Add</button>
-          </div>
+      <form class="mx-auto" onsubmit="addItem(event)">
+        <div class="input-group">
+          <label for="to-do_input" class="visually-hidden">To-Do Item:</label>
+          <input type="text" id="to-do_input" data-testid="toDoTextInput" class="form-control" placeholder="enter to-do item" required>
+          <button type="submit" data-testid="submitButton">Add</button>
         </div>
       </form>
     </section>
