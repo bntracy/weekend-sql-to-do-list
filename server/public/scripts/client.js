@@ -21,13 +21,15 @@ function renderItems(items) {
     for (let item of items) {
         let completedClass = '';
         let disabledButton = '';
+        let textMuted = '';
         if (item.isComplete) {
             completedClass = 'class="completed table-light"';
             disabledButton = 'disabled';
+            textMuted = 'class="text-muted"';
         }
         document.getElementById('item_display').innerHTML += `
             <tr data-testid="toDoItem" ${completedClass}>
-                <td>${item.text}</td>
+                <td ${textMuted}>${item.text}</td>
                 <td><button data-testid="completeButton" onclick="completeItem(${item.id})" class="btn btn-success" ${disabledButton}>Mark Done</button></td>
                 <td><button data-testid="deleteButton" onclick="deleteItem(${item.id})" class="btn btn-danger">Delete</button></td>
             </tr>
