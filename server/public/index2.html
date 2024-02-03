@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="./scripts/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/client2.js" defer></script>
+  <title>SQL TO-DO List #2</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="display-3 my-3">SQL TO-DO List #2</h1>
+  </header>
+  <main>
+    <section>
+      <form class="mx-auto" onsubmit="addItem(event)">
+        <div class="input-group">
+          <label for="to-do_input" class="visually-hidden">To-Do Item:</label>
+          <input type="text" id="to-do_input" data-testid="toDoTextInput" class="form-control" placeholder="enter to-do item" required>
+          <button type="submit" data-testid="submitButton" class="btn btn-success btn-lg">Add</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <div class="table-responsive"> 
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Item</th>
+              <th>Complete</th>
+              <th>Completed</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="item_display"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete?</p>
+                <p>This cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmed-delete" data-bs-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
