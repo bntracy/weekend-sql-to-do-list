@@ -2,7 +2,7 @@
 
 ## Description
 
-A basic to-do list. Items can be added, deleted, or marked complete. Completed items display a timestamp marking the time of completion.
+A basic to-do list. Items can be added, deleted, or marked complete. Completed items display a timestamp marking the time of completion. There is also a link to a second interface that includes the additional feature of confirmation dialogues when deleting items. Both interfaces access the same database.
 
 ### Prerequisites
 
