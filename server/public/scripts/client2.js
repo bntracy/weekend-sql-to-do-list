@@ -84,9 +84,15 @@ function prettyTimestamp(timestamp) {
     // console.log(localTimestamp);
     let hours = localTimestamp.getHours();
     let amOrPm = 'AM';
+    if (hours == 12) {
+        amOrPm = 'PM'
+    }
     if (hours > 12) {
         hours -= 12;
         amOrPm = 'PM';
+    }
+    if (hours == 0) {
+        hours = 12;
     }
     let prettyString = `${localTimestamp.toDateString()} ${hours}:${localTimestamp.getMinutes()} ${amOrPm}`;
     return prettyString;
