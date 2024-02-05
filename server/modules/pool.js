@@ -7,9 +7,10 @@ if (process.env.NODE_ENV === 'test') {
 }
 
 let pool;
-if (process.env.DATABSE_URL) {
+if (process.env.DATABASE_URL) {
+  // console.log('DATABASE_URL found');
   pool = new pg.Pool({
-    connectionString: process.env.DATABSE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
     }
